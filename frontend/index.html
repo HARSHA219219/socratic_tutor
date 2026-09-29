@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#3b4fe0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply the saved theme before first paint (avoids a flash). Light + Ocean by default.
+      try {
+        var m = localStorage.getItem('theme-mode'), p = localStorage.getItem('theme-palette');
+        document.documentElement.dataset.mode = m === 'dark' ? 'dark' : 'light';
+        document.documentElement.dataset.palette = ['iris', 'ocean', 'sunset', 'forest', 'saffron', 'plum', 'graphite'].indexOf(p) >= 0 ? p : 'ocean';
+      } catch (e) { document.documentElement.dataset.mode = 'light'; }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Socratic Tutor · IITGN</title>
+    <meta name="description" content="An AI tutor for IIT Gandhinagar students that teaches by asking the right questions, with step-by-step hints." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

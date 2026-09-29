@@ -1,0 +1,134 @@
+# =========================
+# Python / FastAPI
+# =========================
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checking / linting caches
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# =========================
+# Node / TypeScript
+# =========================
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# npm / yarn / pnpm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager files that are safe to ignore
+# (DO NOT ignore package-lock.json / yarn.lock / pnpm-lock.yaml)
+
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# Local configuration
+*.local
+
+
+# =========================
+# IDE / Editors
+# =========================
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+
+# Cursor
+.cursor/
+
+
+# =========================
+# OS files
+# =========================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# =========================
+# Logs
+# =========================
+
+*.log
+logs/
+
+
+# =========================
+# Temporary files
+# =========================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =========================
+# Runtime data (never commit)
+# =========================
+
+# Student chat images (stored on disk, referenced from SQLite)
+backend/uploads/
+# Local database backups made before migrations
+backend/db_backups/
+# SQLite databases hold student accounts and chats (never commit)
+backend/*.db
+backend/*.db-journal

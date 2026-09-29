@@ -1,0 +1,25 @@
+name: socratic-tutor
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: socratic-tutor-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: socratic_user
+      POSTGRES_PASSWORD: socratic_password
+      POSTGRES_DB: socratic_tutor
+    ports:
+      # Host 5432/5433 are used by other local Postgres containers, so expose on 5434.
+      # backend/.env: DATABASE_URL=postgresql+asyncpg://socratic_user:socratic_password@localhost:5434/socratic_tutor
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U socratic_user -d socratic_tutor"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
